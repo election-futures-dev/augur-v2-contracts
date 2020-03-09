@@ -1,0 +1,54 @@
+{
+  "serviceName": "augur-v2-contracts",
+  "contracts": {
+    "Augur": {
+      "path": "./contracts/Augur.sol"
+    },
+    "AugurTrading": {
+      "path": "./contracts/trading/AugurTrading.sol",
+      "constructorArguments": [
+        "${contracts.Augur.address}"
+      ]
+    },
+    "Trade": {
+      "path": "./contracts/trading/Trade.sol",
+      "initialize": {
+        "functionName": "initialize",
+        "arguments": [
+          "${contracts.Augur.address}",
+          "${contracts.AugurTrading.address}"
+        ]
+      }
+    },
+    "CreateOrder": {
+      "path": "./contracts/trading/CreateOrder.sol",
+      "initialize": {
+        "functionName": "initialize",
+        "arguments": [
+          "${contracts.Augur.address}",
+          "${contracts.AugurTrading.address}"
+        ]
+      }
+    },
+    "FillOrder": {
+      "path": "./contracts/trading/FillOrder.sol",
+      "initialize": {
+        "functionName": "initialize",
+        "arguments": [
+          "${contracts.Augur.address}",
+          "${contracts.AugurTrading.address}"
+        ]
+      }
+    },
+    "CancelOrder": {
+      "path": "./contracts/trading/CancelOrder.sol",
+      "initialize": {
+        "functionName": "initialize",
+        "arguments": [
+          "${contracts.Augur.address}",
+          "${contracts.AugurTrading.address}"
+        ]
+      }
+    }
+  }
+}
